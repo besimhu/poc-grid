@@ -1,0 +1,239 @@
+@use "sass:color";
+
+// ─── Tokens ──────────────────────────────────────────────────────────────────
+$color-bg: #111;
+$color-surface: #1e1e1e;
+$color-surface-hover: #252525;
+$color-border: #2e2e2e;
+$color-text: #f0f0f0;
+$color-muted: #888;
+$color-accent: #d93025; // PwC red
+
+$radius: 6px;
+$row-gap: 1rem;
+$col-gap: 3rem;
+
+// ─── Named area accent colours ────────────────────────────────────────────────
+// Matches the data-area attribute set by JS (a / b / c / d).
+// Add your own rules under [data-area="x"] anywhere in this file.
+$areas: (
+  'a': $color-accent,
+  'b': color.adjust($color-accent, $lightness: -12%),
+  'c': color.adjust($color-accent, $lightness: 18%),
+  'd': color.mix($color-accent, #fff, 60%),
+);
+
+// ─── Reset ───────────────────────────────────────────────────────────────────
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+// ─── Base ────────────────────────────────────────────────────────────────────
+body {
+  font-family: system-ui, sans-serif;
+  background: $color-bg;
+  color: $color-text;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+// ─── Grid wrapper ────────────────────────────────────────────────────────────
+// 6 columns × auto rows. JS groups 4 cards into a 6-row block, with intentional
+// empty columns and a blank row 4 in every group for an airy, editorial feel.
+//
+//   Pattern 0              Pattern 1              Pattern 2
+//   col: 1  2  3  4  5  6  col: 1  2  3  4  5  6  col: 1  2  3  4  5  6
+//   r1:  a  a  a  ·  ·  ·  r1:  ·  ·  ·  a  a  a  r1:  ·  a  a  a  ·  ·
+//   r2:  a  a  a  ·  b  b  r2:  b  b  ·  a  a  a  r2:  ·  a  a  a  b  b
+//   r3:  a  a  a  ·  b  b  r3:  b  b  ·  a  a  a  r3:  ·  a  a  a  b  b
+//   r4:  ·  ·  ·  ·  ·  ·  r4:  ·  ·  ·  ·  ·  ·  r4:  ·  ·  ·  ·  ·  ·
+//   r5:  ·  d  d  ·  c  c  r5:  c  c  c  ·  ·  d  r5:  c  c  ·  d  d  d
+//   r6:  ·  d  d  ·  c  c  r6:  c  c  c  ·  ·  d  r6:  c  c  ·  d  d  d
+//
+.grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-auto-rows: minmax(160px, auto);
+  column-gap: $col-gap;
+  row-gap: $row-gap;
+
+  // ── Tablet — 4 columns, JS-positioned ────────────────────────────────
+  @media (min-width: 768px) and (max-width: 1199px) {
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 2rem;
+  }
+
+  // ── Mobile — single column stack, content-driven height ──────────────
+  @media (max-width: 767px) {
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+    column-gap: 0;
+    row-gap: $row-gap;
+
+    // Reset all JS-applied grid placement so cards stack naturally
+    .card {
+      grid-column: 1 / -1 !important;
+      grid-row: auto !important;
+    }
+  }
+}
+
+// ─── Card themes ─────────────────────────────────────────────────────────────
+// theme-1 → default dark surface (applied to most cards)
+// theme-2 → muted warm surface, sporadic accent
+// theme-3 → subtle light-on-dark inversion, sporadic accent
+//
+// Themes are assigned by JS via .card--theme-{n} on the card element.
+
+// ── Theme 2 — warm muted ─────────────────────────────────────────────────────
+$t2-bg:     #1c1816;
+$t2-border: #362e2b;
+$t2-text:   #e8ddd8;
+$t2-muted:  #927f78;
+$t2-accent: #c2674f;
+
+// ── Theme 3 — cool slate ──────────────────────────────────────────────────────
+$t3-bg:     #141820;
+$t3-border: #252d3d;
+$t3-text:   #d4dff0;
+$t3-muted:  #6d7f9e;
+$t3-accent: #5b8fd4;
+
+// ─── Card ────────────────────────────────────────────────────────────────────
+.card {
+  background: $color-surface;
+  border: 1px solid $color-border;
+  border-radius: $radius;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: background 0.15s ease, border-color 0.15s ease;
+  overflow: hidden;
+
+  &:hover {
+    background: $color-surface-hover;
+    border-color: color.adjust($color-border, $lightness: 8%);
+  }
+
+  // Named area accent — driven by data-area attribute.
+  // To style a specific area, target [data-area="a"] etc. here.
+  @each $name, $color in $areas {
+    &[data-area='#{$name}'] {
+      border-top: 3px solid $color;
+    }
+  }
+
+  // ── Tag ──────────────────────────────────────────────────────────────
+  &__tag {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: $color-accent;
+    background: rgba($color-accent, 0.1);
+    border-radius: 3px;
+    padding: 0.2em 0.55em;
+    align-self: flex-start;
+  }
+
+  // ── Title ────────────────────────────────────────────────────────────
+  &__title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    line-height: 1.3;
+    color: $color-text;
+  }
+
+  // ── Body ─────────────────────────────────────────────────────────────
+  &__body {
+    font-size: 0.875rem;
+    line-height: 1.55;
+    color: $color-muted;
+  }
+
+  // ── Hidden state (infinite scroll) ───────────────────────────────────
+  // Kept for reference — cards are now lazily appended, not hidden.
+  // &--hidden { display: none; }
+
+  // ── Theme 2 — warm muted ───────────────────────────────────────────────
+  &--theme-2 {
+    background: $t2-bg;
+    border-color: $t2-border;
+
+    &:hover {
+      background: color.adjust($t2-bg, $lightness: 3%);
+      border-color: color.adjust($t2-border, $lightness: 8%);
+    }
+
+    @each $name, $_ in $areas {
+      &[data-area='#{$name}'] {
+        border-top-color: $t2-accent;
+      }
+    }
+
+    .card__tag {
+      color: $t2-accent;
+      background: rgba($t2-accent, 0.12);
+    }
+
+    .card__title { color: $t2-text; }
+    .card__body  { color: $t2-muted; }
+  }
+
+  // ── Theme 3 — cool slate ───────────────────────────────────────────────
+  &--theme-3 {
+    background: $t3-bg;
+    border-color: $t3-border;
+
+    &:hover {
+      background: color.adjust($t3-bg, $lightness: 3%);
+      border-color: color.adjust($t3-border, $lightness: 8%);
+    }
+
+    @each $name, $_ in $areas {
+      &[data-area='#{$name}'] {
+        border-top-color: $t3-accent;
+      }
+    }
+
+    .card__tag {
+      color: $t3-accent;
+      background: rgba($t3-accent, 0.12);
+    }
+
+    .card__title { color: $t3-text; }
+    .card__body  { color: $t3-muted; }
+  }
+}
+
+// ─── Scroll sentinel ──────────────────────────────────────────────────────────
+.scroll-sentinel {
+  height: 1px;
+  pointer-events: none;
+}
+
+// ─── Loading indicator ────────────────────────────────────────────────────────
+.loader {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0 3rem;
+
+  &::after {
+    content: '';
+    width: 28px;
+    height: 28px;
+    border: 2px solid $color-border;
+    border-top-color: $color-accent;
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+  }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

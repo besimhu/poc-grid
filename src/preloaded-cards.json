@@ -46,21 +46,5 @@
     "size": "small",
     "title": "Market Entry Analysis",
     "body": "Identifying and evaluating high-value opportunities in emerging and established markets worldwide."
-  },
-  {
-    "id": 7,
-    "tag": "Finance",
-    "type": "comparative-data",
-    "size": "large",
-    "title": "Mergers & Acquisitions",
-    "body": "Comprehensive due diligence and integration support to maximise deal value from day one."
-  },
-  {
-    "id": 8,
-    "tag": "Technology",
-    "type": "insight-image",
-    "size": "medium",
-    "title": "AI & Automation",
-    "body": "Deploying intelligent automation to streamline processes and unlock operational efficiency at scale."
   }
 ]

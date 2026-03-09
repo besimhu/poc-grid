@@ -51,6 +51,25 @@ body {
   @media (max-width: 767px) {
     display: none;
   }
+
+  &__load-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.6em 1.25em;
+    font-family: inherit;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #fff;
+    background: var(--card-accent);
+    border: none;
+    border-radius: var(--card-radius);
+    cursor: pointer;
+    transition: opacity 0.15s ease;
+
+    &:hover { opacity: 0.88; }
+    &:disabled { opacity: 0.4; cursor: default; }
+  }
 }
 
 // ─── Grid wrapper ────────────────────────────────────────────────────────────

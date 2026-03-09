@@ -70,6 +70,30 @@ function appendCards(cards, startIndex) {
 appendCards(preloadedCards, 0);
 totalLoaded = preloadedCards.length;
 
+// ─── Load button ─────────────────────────────────────────────────────────────
+// Clicking replaces the preloaded cards with the first page of dynamic cards
+// and enables infinite scroll for subsequent pages.
+const loadBtn = document.getElementById('load-btn');
+let dynamicScrollEnabled = false;
+
+function enableDynamicScroll() {
+  if (dynamicScrollEnabled) return;
+  dynamicScrollEnabled = true;
+  initScrollInfrastructure();
+  observer.observe(sentinel);
+  loadNextPage();
+}
+
+loadBtn.addEventListener('click', () => {
+  loadBtn.disabled = true;
+  const grid = document.getElementById('grid');
+  grid.innerHTML = '';
+  currentPage = 0;
+  totalLoaded = 0;
+  exhausted = false;
+  enableDynamicScroll();
+});
+
 // ─── Load next page ───────────────────────────────────────────────────────────
 async function loadNextPage() {
   if (isLoading || exhausted) return;
@@ -104,27 +128,29 @@ async function loadNextPage() {
   }
 }
 
-// ─── Loading indicator ────────────────────────────────────────────────────────
-const loader = document.createElement("div");
-loader.className = "loader";
-loader.setAttribute("aria-label", "Loading more cards");
-loader.hidden = true;
-document.body.appendChild(loader);
+// ─── Loading indicator & sentinel (created on demand) ────────────────────────
+let loader;
+let sentinel;
+let observer;
 
-// ─── Intersection sentinel ────────────────────────────────────────────────────
-const sentinel = document.createElement("div");
-sentinel.className = "scroll-sentinel";
-document.body.appendChild(sentinel);
+function initScrollInfrastructure() {
+  loader = document.createElement("div");
+  loader.className = "loader";
+  loader.setAttribute("aria-label", "Loading more cards");
+  loader.hidden = true;
+  document.body.appendChild(loader);
 
-const observer = new IntersectionObserver(
-  (entries) => {
-    if (entries[0].isIntersecting) loadNextPage();
-  },
-  { rootMargin: "400px" },
-);
+  sentinel = document.createElement("div");
+  sentinel.className = "scroll-sentinel";
+  document.body.appendChild(sentinel);
 
-observer.observe(sentinel);
-loadNextPage();
+  observer = new IntersectionObserver(
+    (entries) => {
+      if (entries[0].isIntersecting) loadNextPage();
+    },
+    { rootMargin: "400px" },
+  );
+}
 
 if (import.meta.hot) {
   import.meta.hot.accept();

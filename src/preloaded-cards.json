@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "tag": "Strategy",
+    "type": "insight-headline",
+    "size": "small",
+    "title": "Digital Transformation",
+    "body": "Enabling businesses to adapt and thrive in an increasingly digital world through integrated technology strategies."
+  },
+  {
+    "id": 2,
+    "tag": "Finance",
+    "type": "key-data",
+    "size": "large",
+    "title": "Risk & Compliance",
+    "body": "Proactive frameworks to manage regulatory risk and ensure compliance across financial operations."
+  },
+  {
+    "id": 3,
+    "tag": "Technology",
+    "type": "offering",
+    "size": "medium",
+    "title": "Cloud Infrastructure",
+    "body": "Scalable, secure cloud architecture designed for enterprise-grade performance and reliability."
+  },
+  {
+    "id": 4,
+    "tag": "People",
+    "type": "key-data",
+    "size": "small",
+    "title": "Workforce Planning",
+    "body": "Data-driven approaches to align talent with organisational goals and future capability needs."
+  },
+  {
+    "id": 5,
+    "tag": "Operations",
+    "type": "action",
+    "size": "large",
+    "title": "Supply Chain Optimisation",
+    "body": "End-to-end visibility and intelligent automation to reduce friction across global supply chains."
+  },
+  {
+    "id": 6,
+    "tag": "Strategy",
+    "type": "insight-headline",
+    "size": "small",
+    "title": "Market Entry Analysis",
+    "body": "Identifying and evaluating high-value opportunities in emerging and established markets worldwide."
+  },
+  {
+    "id": 7,
+    "tag": "Finance",
+    "type": "comparative-data",
+    "size": "large",
+    "title": "Mergers & Acquisitions",
+    "body": "Comprehensive due diligence and integration support to maximise deal value from day one."
+  },
+  {
+    "id": 8,
+    "tag": "Technology",
+    "type": "insight-image",
+    "size": "medium",
+    "title": "AI & Automation",
+    "body": "Deploying intelligent automation to streamline processes and unlock operational efficiency at scale."
+  }
+]

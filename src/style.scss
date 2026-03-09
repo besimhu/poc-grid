@@ -28,43 +28,53 @@ body {
   background: linear-gradient(245.28deg, #FFF5ED 59.85%, #FED6C9 117.43%, #FFDABF 139.01%) fixed;
   color: var(--card-text);
   min-height: 100vh;
-  padding: 2rem;
   border: 8px solid;
   border-image-source: linear-gradient(90deg, rgba(255, 170, 114, 0) 29.65%, #FFAA72 100%);
   border-image-slice: 1;
 }
 
+// ─── Landing ─────────────────────────────────────────────────────────────────
+.landing {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px;
+}
+
+// ─── Sidebar ─────────────────────────────────────────────────────────────────
+.sidebar {
+  width: 440px;
+  flex-shrink: 0;
+
+  @media (max-width: 767px) {
+    display: none;
+  }
+}
+
 // ─── Grid wrapper ────────────────────────────────────────────────────────────
 .grid {
+  flex: 1;
+  min-width: 0;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-auto-rows: minmax(160px, auto);
+  grid-template-columns: repeat(4, 1fr);
   column-gap: $col-gap;
   row-gap: $row-gap;
+  align-items: start;
 
-  // ── Tablet — 4 columns, JS-positioned ────────────────────────────────
+  // ── Tablet — 3 columns ───────────────────────────────────────────────
   @media (min-width: 768px) and (max-width: 1199px) {
-    grid-template-columns: repeat(4, 1fr);
-    column-gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
   }
 
-  // ── Mobile — single column stack, content-driven height ──────────────
+  // ── Mobile — single column ───────────────────────────────────────────
   @media (max-width: 767px) {
     grid-template-columns: 1fr;
-    grid-auto-rows: auto;
-    column-gap: 0;
-    row-gap: $row-gap;
-
-    // Reset all JS-applied grid placement so cards stack naturally
-    .card {
-      grid-column: 1 / -1 !important;
-      grid-row: auto !important;
-    }
   }
 }
 
 // ─── Card ────────────────────────────────────────────────────────────────────
-// Themes override --card-bg via a scoped custom property on the element.
 .card {
   background: var(--card-bg);
   border-radius: var(--card-radius);
@@ -72,9 +82,21 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+  min-height: 160px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
   transition: background 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
   overflow: hidden;
+
+  // ── Sizes ────────────────────────────────────────────────────────────
+  &--small  { grid-column: span 1; }
+  &--medium { grid-column: span 2; aspect-ratio: 1/1;}
+  &--large  { grid-column: span 3; aspect-ratio: 16/9;}
+
+  @media (max-width: 767px) {
+    &--small,
+    &--medium,
+    &--large { grid-column: span 1; }
+  }
 
   &:hover {
     filter: brightness(0.97);

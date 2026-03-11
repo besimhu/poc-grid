@@ -39,6 +39,7 @@ function createCard(card, index) {
   if (card.url) {
     el.setAttribute("role", "link");
     el.setAttribute("data-url", card.url);
+    el.setAttribute("data-selector", card.selector || "#content");
   }
 
   el.innerHTML = `
@@ -51,7 +52,7 @@ function createCard(card, index) {
 }
 
 // ─── Overlay management ────────────────────────────────────────────────────────
-async function openOverlay(url) {
+async function openOverlay(url, selector = "#content") {
   const overlay = document.getElementById("overlay");
   const overlayBody = document.getElementById("overlay-body");
   
@@ -70,12 +71,12 @@ async function openOverlay(url) {
     const html = await response.text();
     const parser = new DOMParser();
     const doc = parser.parseFromString(html, "text/html");
-    const content = doc.getElementById("content");
+    const content = doc.querySelector(selector);
     
     if (content) {
       overlayBody.innerHTML = content.innerHTML;
     } else {
-      overlayBody.innerHTML = '<p style="color: red;">Content not found</p>';
+      overlayBody.innerHTML = `<p style="color: red;">Content not found (selector: ${selector})</p>`;
     }
   } catch (error) {
     overlayBody.innerHTML = '<p style="color: red;">Network error occurred</p>';
@@ -119,7 +120,8 @@ grid.addEventListener("click", (e) => {
   const card = e.target.closest(".card[data-url]");
   if (card) {
     const url = card.getAttribute("data-url");
-    openOverlay(url);
+    const selector = card.getAttribute("data-selector") || "#content";
+    openOverlay(url, selector);
   }
 });
 

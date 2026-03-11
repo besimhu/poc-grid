@@ -22,18 +22,19 @@
     "tag": "Technology",
     "type": "offering",
     "size": "medium",
-    "title": "Cloud Infrastructure",
-    "body": "Scalable, secure cloud architecture designed for enterprise-grade performance and reliability.",
-    "url": "card-3.html"
+    "title": "AI-Powered Image Editing (external)",
+    "body": "Image editing just got smarter with AI-powered tools in Photoshop Firefly.",
+    "url": "https://blog.adobe.com/en/publish/2026/03/10/image-editing-just-got-smarter-with-ai-photoshop-firefly",
+    "selector": "main"
   },
   {
     "id": 4,
     "tag": "People",
     "type": "key-data",
     "size": "small",
-    "title": "Workforce Planning",
+    "title": "Workforce Planning (broken)",
     "body": "Data-driven approaches to align talent with organisational goals and future capability needs.",
-    "url": "card-1.html"
+    "url": "card-3.html"
   },
   {
     "id": 5,

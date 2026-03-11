@@ -32,8 +32,14 @@ function pickTheme(index) {
 function createCard(card, index) {
   const theme = pickTheme(index);
   const size = card.size ?? pickSize(card.type);
-  const el = document.createElement("article");
+  const el = document.createElement("button");
   el.className = `card card--${theme} card--${size}`;
+  el.type = "button";
+  
+  if (card.url) {
+    el.setAttribute("role", "link");
+    el.setAttribute("data-url", card.url);
+  }
 
   el.innerHTML = `
     <span class="card__tag">${card.tag}</span>
@@ -42,6 +48,43 @@ function createCard(card, index) {
   `;
 
   return el;
+}
+
+// ─── Overlay management ────────────────────────────────────────────────────────
+async function openOverlay(url) {
+  const overlay = document.getElementById("overlay");
+  const overlayBody = document.getElementById("overlay-body");
+  
+  // Show loading state
+  overlayBody.innerHTML = '<p style="text-align: center; padding: 2rem;">Loading...</p>';
+  overlay.showModal();
+
+  try {
+    const response = await fetch(url);
+    
+    if (!response.ok) {
+      overlayBody.innerHTML = `<p style="color: red;">Error loading content: ${response.status}</p>`;
+      return;
+    }
+
+    const html = await response.text();
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(html, "text/html");
+    const content = doc.getElementById("content");
+    
+    if (content) {
+      overlayBody.innerHTML = content.innerHTML;
+    } else {
+      overlayBody.innerHTML = '<p style="color: red;">Content not found</p>';
+    }
+  } catch (error) {
+    overlayBody.innerHTML = '<p style="color: red;">Network error occurred</p>';
+  }
+}
+
+function closeOverlay() {
+  const overlay = document.getElementById("overlay");
+  overlay.close();
 }
 
 // ─── Simulated streaming API ──────────────────────────────────────────────────
@@ -69,6 +112,16 @@ function appendCards(cards, startIndex) {
 // ─── Render preloaded cards immediately ───────────────────────────────────────
 appendCards(preloadedCards, 0);
 totalLoaded = preloadedCards.length;
+
+// ─── Event delegation for card clicks ─────────────────────────────────────────
+const grid = document.getElementById("grid");
+grid.addEventListener("click", (e) => {
+  const card = e.target.closest(".card[data-url]");
+  if (card) {
+    const url = card.getAttribute("data-url");
+    openOverlay(url);
+  }
+});
 
 // ─── Load button ─────────────────────────────────────────────────────────────
 // Clicking replaces the preloaded cards with the first page of dynamic cards
@@ -151,6 +204,18 @@ function initScrollInfrastructure() {
     { rootMargin: "400px" },
   );
 }
+
+// ─── Close overlay event listeners ────────────────────────────────────────────
+const overlay = document.getElementById("overlay");
+
+document.getElementById("overlay-close").addEventListener("click", closeOverlay);
+
+// Close when clicking on backdrop
+overlay.addEventListener("click", (e) => {
+  if (e.target.tagName === "DIALOG") {
+    closeOverlay();
+  }
+});
 
 if (import.meta.hot) {
   import.meta.hot.accept();

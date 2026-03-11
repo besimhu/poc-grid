@@ -4,217 +4,248 @@
     "tag": "People",
     "type": "profile",
     "title": "Leadership Development",
-    "body": "Cultivating the next generation of leaders with tailored coaching and development programmes."
+    "body": "Cultivating the next generation of leaders with tailored coaching and development programmes.",
+    "url": "card-1.html"
   },
   {
     "id": 10,
     "tag": "Operations",
     "type": "insight-headline",
     "title": "Process Re-engineering",
-    "body": "Redesigning core business processes to eliminate waste and deliver measurable performance gains."
+    "body": "Redesigning core business processes to eliminate waste and deliver measurable performance gains.",
+    "url": "card-2.html"
   },
   {
     "id": 11,
     "tag": "Strategy",
     "type": "comparative-data",
     "title": "Competitive Benchmarking",
-    "body": "Rigorous analysis of market positioning to identify gaps and sharpen your competitive advantage."
+    "body": "Rigorous analysis of market positioning to identify gaps and sharpen your competitive advantage.",
+    "url":"card-1.html"
   },
   {
     "id": 12,
     "tag": "Finance",
     "type": "key-data",
     "title": "Tax Optimisation",
-    "body": "Strategic tax planning that balances regulatory obligations with opportunities to reduce overall burden."
+    "body": "Strategic tax planning that balances regulatory obligations with opportunities to reduce overall burden.",
+    "url":"card-2.html"
   },
   {
     "id": 13,
     "tag": "Technology",
     "type": "insight-image",
     "title": "Cyber Security",
-    "body": "Protecting critical assets and data through proactive threat detection and resilience frameworks."
+    "body": "Protecting critical assets and data through proactive threat detection and resilience frameworks.",
+    "url":"card-1.html"
   },
   {
     "id": 14,
     "tag": "People",
     "type": "insight-quote",
     "title": "Diversity & Inclusion",
-    "body": "Building equitable workplaces where diverse talent can contribute fully and thrive."
+    "body": "Building equitable workplaces where diverse talent can contribute fully and thrive.",
+    "url":"card-2.html"
   },
   {
     "id": 15,
     "tag": "Operations",
     "type": "action",
     "title": "Lean Manufacturing",
-    "body": "Applying lean principles to eliminate inefficiencies and build more responsive production systems."
+    "body": "Applying lean principles to eliminate inefficiencies and build more responsive production systems.",
+    "url":"card-1.html"
   },
   {
     "id": 16,
     "tag": "Strategy",
     "type": "insight-quote",
     "title": "ESG Strategy",
-    "body": "Embedding environmental, social and governance priorities into core business decision-making."
+    "body": "Embedding environmental, social and governance priorities into core business decision-making.",
+    "url":"card-2.html"
   },
   {
     "id": 17,
     "tag": "Finance",
     "type": "key-data",
     "title": "Capital Markets Advisory",
-    "body": "Expert guidance on debt and equity financing to support growth and strategic transactions."
+    "body": "Expert guidance on debt and equity financing to support growth and strategic transactions.",
+    "url":"card-1.html"
   },
   {
     "id": 18,
     "tag": "Technology",
     "type": "insight-image",
     "title": "Data & Analytics",
-    "body": "Turning raw data into actionable insights that drive smarter decisions across the organisation."
+    "body": "Turning raw data into actionable insights that drive smarter decisions across the organisation.",
+    "url":"card-2.html"
   },
   {
     "id": 19,
     "tag": "People",
     "type": "insight-headline",
     "title": "Change Management",
-    "body": "Structured approaches to guide organisations and their people through complex transformations."
+    "body": "Structured approaches to guide organisations and their people through complex transformations.",
+    "url":"card-1.html"
   },
   {
     "id": 20,
     "tag": "Operations",
     "type": "offering",
     "title": "Outsourcing Advisory",
-    "body": "Identifying the right functions to outsource and building governance models that protect quality."
+    "body": "Identifying the right functions to outsource and building governance models that protect quality.",
+    "url":"card-2.html"
   },
   {
     "id": 21,
     "tag": "Strategy",
     "type": "insight-image",
     "title": "Innovation Labs",
-    "body": "Creating structured environments for rapid experimentation and validated new business models."
+    "body": "Creating structured environments for rapid experimentation and validated new business models.",
+    "url":"card-1.html"
   },
   {
     "id": 22,
     "tag": "Finance",
     "type": "key-data",
     "title": "Financial Restructuring",
-    "body": "Stabilising and repositioning businesses facing financial distress through expert intervention."
+    "body": "Stabilising and repositioning businesses facing financial distress through expert intervention.",
+    "url":"card-2.html"
   },
   {
     "id": 23,
     "tag": "Technology",
     "type": "offering",
     "title": "ERP Implementation",
-    "body": "End-to-end programme delivery for enterprise resource planning systems that actually work."
+    "body": "End-to-end programme delivery for enterprise resource planning systems that actually work.",
+    "url":"card-1.html"
   },
   {
     "id": 24,
     "tag": "People",
     "type": "action",
     "title": "Talent Acquisition",
-    "body": "Designing hiring strategies and candidate experiences that attract high-calibre professionals."
+    "body": "Designing hiring strategies and candidate experiences that attract high-calibre professionals.",
+    "url":"card-2.html"
   },
   {
     "id": 25,
     "tag": "Operations",
     "type": "insight-headline",
     "title": "Operational Due Diligence",
-    "body": "Deep dives into operational capability to de-risk transactions and surface value creation opportunities."
+    "body": "Deep dives into operational capability to de-risk transactions and surface value creation opportunities.",
+    "url":"card-1.html"
   },
   {
     "id": 26,
     "tag": "Strategy",
     "type": "comparative-data",
     "title": "Portfolio Rationalisation",
-    "body": "Evaluating the business portfolio to divest underperforming units and focus on core strengths."
+    "body": "Evaluating the business portfolio to divest underperforming units and focus on core strengths.",
+    "url":"card-2.html"
   },
   {
     "id": 27,
     "tag": "Finance",
     "type": "key-data",
     "title": "Treasury Management",
-    "body": "Optimising cash flow, liquidity and financial risk to strengthen the balance sheet."
+    "body": "Optimising cash flow, liquidity and financial risk to strengthen the balance sheet.",
+    "url":"card-1.html"
   },
   {
     "id": 28,
     "tag": "Technology",
     "type": "offering",
     "title": "DevOps & Platform Engineering",
-    "body": "Building fast, reliable delivery pipelines and developer platforms that scale with the business."
+    "body": "Building fast, reliable delivery pipelines and developer platforms that scale with the business.",
+    "url":"card-2.html"
   },
   {
     "id": 29,
     "tag": "People",
     "type": "profile",
     "title": "Employee Experience",
-    "body": "Designing workplaces and cultures where people are engaged, productive and motivated to stay."
+    "body": "Designing workplaces and cultures where people are engaged, productive and motivated to stay.",
+    "url":"card-1.html"
   },
   {
     "id": 30,
     "tag": "Operations",
     "type": "action",
     "title": "Procurement Transformation",
-    "body": "Modernising sourcing and supplier management to drive cost savings and build resilience."
+    "body": "Modernising sourcing and supplier management to drive cost savings and build resilience.",
+    "url":"card-2.html"
   },
   {
     "id": 31,
     "tag": "Strategy",
     "type": "insight-headline",
     "title": "Scenario Planning",
-    "body": "Preparing organisations for multiple futures through structured, evidence-based foresight exercises."
+    "body": "Preparing organisations for multiple futures through structured, evidence-based foresight exercises.",
+    "url":"card-1.html"
   },
   {
     "id": 32,
     "tag": "Finance",
     "type": "key-data",
     "title": "Forensic Accounting",
-    "body": "Uncovering financial irregularities and providing litigation support with detailed expert analysis."
+    "body": "Uncovering financial irregularities and providing litigation support with detailed expert analysis.",
+    "url":"card-2.html"
   },
   {
     "id": 33,
     "tag": "Technology",
     "type": "insight-image",
     "title": "IoT & Edge Computing",
-    "body": "Connecting physical assets to digital intelligence for real-time monitoring and operational insight."
+    "body": "Connecting physical assets to digital intelligence for real-time monitoring and operational insight.",
+    "url":"card-1.html"
   },
   {
     "id": 34,
     "tag": "People",
     "type": "action",
     "title": "Skills & Reskilling",
-    "body": "Mapping future capability requirements and equipping workforces with the skills to meet them."
+    "body": "Mapping future capability requirements and equipping workforces with the skills to meet them.",
+    "url":"card-2.html"
   },
   {
     "id": 35,
     "tag": "Operations",
     "type": "offering",
     "title": "Sustainability Operations",
-    "body": "Integrating sustainable practices into day-to-day operations to meet net-zero commitments."
+    "body": "Integrating sustainable practices into day-to-day operations to meet net-zero commitments.",
+    "url":"card-1.html"
   },
   {
     "id": 36,
     "tag": "Strategy",
     "type": "insight-quote",
     "title": "Customer Experience Strategy",
-    "body": "Reimagining customer journeys to build loyalty, increase retention and grow lifetime value."
+    "body": "Reimagining customer journeys to build loyalty, increase retention and grow lifetime value.",
+    "url":"card-2.html"
   },
   {
     "id": 37,
     "tag": "Finance",
     "type": "key-data",
     "title": "IPO Readiness",
-    "body": "Preparing privately held businesses for the rigours and opportunities of public markets."
+    "body": "Preparing privately held businesses for the rigours and opportunities of public markets.",
+    "url":"card-1.html"
   },
   {
     "id": 38,
     "tag": "Technology",
     "type": "insight-image",
     "title": "Blockchain & Web3",
-    "body": "Evaluating distributed ledger solutions for transparency, traceability and tokenised assets."
+    "body": "Evaluating distributed ledger solutions for transparency, traceability and tokenised assets.",
+    "url":"card-2.html"
   },
   {
     "id": 39,
     "tag": "People",
     "type": "profile",
     "title": "Organisational Design",
-    "body": "Shaping structures, roles and governance to make organisations faster, leaner and more agile."
+    "body": "Shaping structures, roles and governance to make organisations faster, leaner and more agile.",
+    "url":"card-1.html"
   },
   {
     "id": 40,

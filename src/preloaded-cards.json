@@ -5,7 +5,8 @@
     "type": "insight-headline",
     "size": "small",
     "title": "Digital Transformation",
-    "body": "Enabling businesses to adapt and thrive in an increasingly digital world through integrated technology strategies."
+    "body": "Enabling businesses to adapt and thrive in an increasingly digital world through integrated technology strategies.",
+    "url": "card-1.html"
   },
   {
     "id": 2,
@@ -13,7 +14,8 @@
     "type": "key-data",
     "size": "large",
     "title": "Risk & Compliance",
-    "body": "Proactive frameworks to manage regulatory risk and ensure compliance across financial operations."
+    "body": "Proactive frameworks to manage regulatory risk and ensure compliance across financial operations.",
+    "url": "card-2.html"
   },
   {
     "id": 3,
@@ -21,7 +23,8 @@
     "type": "offering",
     "size": "medium",
     "title": "Cloud Infrastructure",
-    "body": "Scalable, secure cloud architecture designed for enterprise-grade performance and reliability."
+    "body": "Scalable, secure cloud architecture designed for enterprise-grade performance and reliability.",
+    "url": "card-3.html"
   },
   {
     "id": 4,
@@ -29,7 +32,8 @@
     "type": "key-data",
     "size": "small",
     "title": "Workforce Planning",
-    "body": "Data-driven approaches to align talent with organisational goals and future capability needs."
+    "body": "Data-driven approaches to align talent with organisational goals and future capability needs.",
+    "url": "card-1.html"
   },
   {
     "id": 5,
@@ -37,7 +41,8 @@
     "type": "action",
     "size": "large",
     "title": "Supply Chain Optimisation",
-    "body": "End-to-end visibility and intelligent automation to reduce friction across global supply chains."
+    "body": "End-to-end visibility and intelligent automation to reduce friction across global supply chains.",
+    "url": "card-2.html"
   },
   {
     "id": 6,
@@ -45,6 +50,7 @@
     "type": "insight-headline",
     "size": "small",
     "title": "Market Entry Analysis",
-    "body": "Identifying and evaluating high-value opportunities in emerging and established markets worldwide."
+    "body": "Identifying and evaluating high-value opportunities in emerging and established markets worldwide.",
+    "url": "card-1.html"
   }
 ]
